@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Diri</title>
+    <link rel="icon" type="image/x-icon" href="Image/Universitas-Merdeka-1.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #495057;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            max-width: 100%;
+            resize: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Data Diri</h2>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Informasi Pribadi</legend>
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required minlength="3" maxlength="50">
+
+            <label>Jenis Kelamin:</label>
+            <div class="radio-group">
+                <label for="pria"><input type="radio" id="pria" name="gender" value="Pria" required> Pria</label>
+                <label for="wanita"><input type="radio" id="wanita" name="gender" value="Wanita" required> Wanita</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Alamat</legend>
+            <label for="alamat">Alamat:</label>
+            <input type="text" id="alamat" name="alamat" placeholder="Alamat Lengkap" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Negara</legend>
+            <label for="negara">Pilih Negara:</label>
+            <select id="dropdown" name="negara" required>
+                <option value="Amerika">Amerika</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="lihat-lebih-banyak">Lihat Lebih Banyak</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Kontak</legend>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="contoh: nama@gmail.com" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Unggah Foto</legend>
+            <label for="foto">Unggah Foto:</label>
+            <input type="file" id="foto" name="foto" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Komentar</legend>
+            <label for="komentar">Komentar:</label>
+            <textarea id="komentar" name="komentar" rows="5" placeholder="Tulis komentar Anda di sini" required></textarea>
+        </fieldset>
+
+        <button type="submit">Simpan</button>
+    </form>
+
+    <script>
+        const dropdown = document.getElementById('dropdown');
+        const options = [
+            { value: 'Malaysia', text: 'Malaysia' },        
+            { value: 'Singapura', text: 'Singapura' },
+            { value: 'Jepang', text: 'Jepang' },
+            { value: 'Inggris', text: 'Inggris' }
+        ];
+
+        const initialOptions = [
+            { value: 'Amerika', text: 'Amerika' },
+            { value: 'Indonesia', text: 'Indonesia' },
+            { value: 'Vietnam', text: 'Vietnam' },
+            { value: 'lihat-lebih-banyak', text: 'Lihat Lebih Banyak' }
+        ];
+
+        dropdown.addEventListener('change', (event) => {
+            if (event.target.value === 'lihat-lebih-banyak') {
+                if (!dropdown.querySelector('option[value="Malaysia"]')) {
+                    options.sort((a, b) => a.text.localeCompare(b.text));
+                    options.forEach(option => {
+                        const opt = document.createElement('option');
+                        opt.value = option.value;
+                        opt.textContent = option.text;
+                        dropdown.appendChild(opt);
+                    });
+                    const lihatLebihSedikit = document.createElement('option');
+                    lihatLebihSedikit.value = 'lihat-lebih-sedikit';
+                    lihatLebihSedikit.textContent = 'Lihat Lebih Sedikit';
+                    dropdown.appendChild(lihatLebihSedikit);
+                    dropdown.querySelector('option[value="lihat-lebih-banyak"]').remove();
+                }
+            } else if (event.target.value === 'lihat-lebih-sedikit') {
+                dropdown.innerHTML = "";
+                initialOptions.forEach(option => {
+                    const opt = document.createElement('option');
+                    opt.value = option.value;
+                    opt.textContent = option.text;
+                    dropdown.appendChild(opt);
+                });
+            }
+        });
+
+        document.getElementById('foto').addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+                if (!allowedTypes.includes(file.type)) {
+                    alert('Hanya boleh mengunggah file dengan format JPG, JPEG, atau PNG :P');
+                     this.value = '';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

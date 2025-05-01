@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS URL Willy Rafael F. Silalahi</title>
+</head>
+<body>
+    <h1>Ini adalah contoh Javascript menggunakan URL</h1>
+    <p id="message">Coba klik link dibawah ini unutuk membuktikan Javascript ini menggunakan URL!</p>
+    <a href="javascript:changeMessage()">Klik Disini</a>
+
+    <script>
+        function changeMessage() {
+            document.getElementById('message').textContent = "Selamat anda terkena link phising!";
+            alert('selamat anda terkena phising')
+        }
+    </script>
+</body>
+</html>

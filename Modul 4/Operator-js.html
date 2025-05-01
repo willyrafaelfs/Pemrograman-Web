@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Operator Willy Rafael F. Silalahi</title>
+</head>
+<script>
+    // Operator Aritmatika
+    document.write("<h2>Operator Aritmatika</h2>");
+    let a = 10;
+    let b = 5;
+    document.write("Penjumlahan: " + (a + b)); // 15
+    document.write("<br>");
+    document.write("Pengurangan: " + (a - b)); // 5
+    document.write("<br>");
+    document.write("Perkalian: " + (a * b)); // 50
+    document.write("<br>");
+    document.write("Pembagian: " + (a / b)); // 2
+    document.write("<br>");
+    document.write("Modulus: " + (a % b)); // 0
+    document.write("<br>");
+
+    // Operator Pemberian Nilai
+    document.write("<h2>Operator Pemberian Nilai</h2>");
+    let x = 10;
+    document.write("Nilai awal x: " + x); // 10
+    document.write("<br>");
+    x += 5; // x = x + 5
+    document.write("Nilai x setelah += 5: " + x); // 15
+    document.write("<br>");
+    x -= 3; // x = x - 3
+    document.write("Nilai x setelah -= 3: " + x); // 12
+    document.write("<br>");
+    x *= 2; // x = x * 2
+    document.write("Nilai x setelah *= 2: " + x); // 24
+
+    //Operator Pemanipulasian bit (bitwise)
+    document.write("<h2>Operator Pemanipulasian bit (bitwise)</h2>");
+    let y = 5; // 0101
+    let z = 3; // 0011
+    document.write("y: " + y + " (0101)");
+    document.write("<br>");
+    document.write("z: " + z + " (0011)");
+    document.write("<br>");
+    document.write("AND: " + (y & z)); // 1 (0001)
+    document.write("<br>");
+    document.write("OR: " + (y | z)); // 7 (0111)
+    document.write("<br>");
+    document.write("XOR: " + (y ^ z)); // 6 (0110)
+    document.write("<br>");
+    document.write("NOT: " + (~y)); // -6 (1010)
+
+    //Operator Pembanding
+    document.write("<h2>Operator Pembanding</h2>");
+    let a1 = 10;
+    let b1 = 5;
+    document.write("a: " + a1);
+    document.write("<br>");
+    document.write("b: " + b1);
+    document.write("<br>");
+    document.write("a == b: " + (a1 == b1)); // false
+    document.write("<br>");
+    document.write("a != b: " + (a1 != b1)); // true
+    document.write("<br>");
+    document.write("a > b: " + (a1 > b1)); // true
+    document.write("<br>");
+    document.write("a < b: " + (a1 < b1)); // false
+    document.write("<br>");
+    document.write("a >= b: " + (a1 >= b1)); // true
+    document.write("<br>");
+    document.write("a <= b: " + (a1 <= b1)); // false
+    document.write("<br>");
+    document.write("a === b: " + (a1 === b1)); // false
+
+    //Operator Logika
+    document.write("<h2>Operator Logika</h2>");
+    let x1 = true;
+    let y1 = false;
+    document.write("x: " + x1);
+    document.write("<br>");
+    document.write("y: " + y1);
+    document.write("<br>");
+    document.write("x && y: " + (x1 && y1)); // false
+    document.write("<br>");
+    document.write("x || y: " + (x1 || y1)); // true
+    document.write("<br>");
+    document.write("!x: " + (!x1)); // false
+    document.write("<br>");
+    document.write("!y: " + (!y1)); // true
+    document.write("<br>");
+    
+    //Operator String
+    document.write("<h2>Operator String</h2>");
+    let str1 = "Hello";
+    let str2 = "World";
+    document.write("str1: " + str1);
+    document.write("<br>");
+    document.write("str2: " + str2);
+    document.write("<br>");
+    document.write("str1 + str2: " + (str1 + " " + str2)); // Hello World
+    document.write("<br>");
+    document.write("str1.length: " + str1.length); // 5
+    document.write("<br>");
+    document.write("str2.length: " + str2.length); // 5
+    document.write("<br>");
+</script>
+<body>
+</body>
+</html>

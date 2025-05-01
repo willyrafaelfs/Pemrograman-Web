@@ -1,0 +1,10 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: line-through;
+    font-size: 20px;
+}
+
+p {
+    font-size: 15px;
+    text-decoration: wavy;
+}

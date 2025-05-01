@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Volume Kubus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #4e54c8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #3b3fc1;
+    }
+
+    #hasil {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Volume Kubus</h1>
+    <label for="sisi">Masukkan panjang sisi (cm):</label>
+    <input type="number" id="sisi" placeholder="Contoh: 5">
+    <button onclick="hitungVolumeKubus()">Hitung</button>
+    <p id="hasil"></p>
+  </div>
+
+  <script>
+    function hitungVolumeKubus() {
+      var sisi = document.getElementById("sisi").value;
+      if (sisi === "" || sisi <= 0) {
+        document.getElementById("hasil").innerText = "Mohon masukkan angka yang valid.";
+        return;
+      }
+      var volume = sisi * sisi * sisi;
+      document.getElementById("hasil").innerText = 
+        "Volume kubus dengan sisi " + sisi + " cm adalah " + volume + " cm³";
+    }
+  </script>
+</body>
+</html>
