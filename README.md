@@ -11,6 +11,7 @@ Proyek ini adalah tugas pemrograman web yang saya kerjakan di semester ini. Beri
 - HTML
 - CSS
 - JavaScript
+- PHP
 
 ## Kontributor
 - Willy Rafael F. Silalahi
