@@ -1,7 +1,7 @@
 # Pemrograman Web
 
 ## Deskripsi
-Proyek ini adalah tugas pemrograman web yang saya kerjakan di semester ini. Berisi modul 1-5, tugas ini mencakup penggunaan HTML, CSS, dan JavaScript.
+Proyek ini adalah tugas pemrograman web yang saya kerjakan di semester ini. Berisi modul 1-5, tugas ini mencakup penggunaan HTML, CSS, JavaScript, dan PHP.
 
 ## Cara Penggunaan
 1. Clone repositori ini
